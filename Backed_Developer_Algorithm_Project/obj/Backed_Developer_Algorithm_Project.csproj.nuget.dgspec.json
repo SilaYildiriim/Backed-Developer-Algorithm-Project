@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project.csproj": {}
+    "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project\\Backed_Developer_Algorithm_Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project.csproj": {
+    "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project\\Backed_Developer_Algorithm_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project.csproj",
+        "projectUniqueName": "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project\\Backed_Developer_Algorithm_Project.csproj",
         "projectName": "Backed_Developer_Algorithm_Project",
-        "projectPath": "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project.csproj",
+        "projectPath": "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project\\Backed_Developer_Algorithm_Project.csproj",
         "packagesPath": "C:\\Users\\SILA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\obj\\",
+        "outputPath": "C:\\Users\\SILA\\Desktop\\Case\\Algoritma Projesi\\Backed_Developer_Algorithm_Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SILA\\AppData\\Roaming\\NuGet\\NuGet.Config",

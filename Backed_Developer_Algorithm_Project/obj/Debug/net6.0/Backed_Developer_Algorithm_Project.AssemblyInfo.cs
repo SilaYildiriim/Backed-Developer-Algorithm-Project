@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Backed_Developer_Algorithm_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d82fca7a7123435798cdbe0c4d243411b915608")]
 [assembly: System.Reflection.AssemblyProductAttribute("Backed_Developer_Algorithm_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Backed_Developer_Algorithm_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

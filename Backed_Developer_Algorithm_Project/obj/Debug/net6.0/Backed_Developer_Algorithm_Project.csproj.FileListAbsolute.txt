@@ -1,0 +1,15 @@
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\bin\Debug\net6.0\Backed_Developer_Algorithm_Project.exe
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\bin\Debug\net6.0\Backed_Developer_Algorithm_Project.deps.json
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\bin\Debug\net6.0\Backed_Developer_Algorithm_Project.runtimeconfig.json
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\bin\Debug\net6.0\Backed_Developer_Algorithm_Project.dll
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\bin\Debug\net6.0\Backed_Developer_Algorithm_Project.pdb
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.AssemblyInfoInputs.cache
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.AssemblyInfo.cs
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.csproj.CoreCompileInputs.cache
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.sourcelink.json
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.dll
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\refint\Backed_Developer_Algorithm_Project.dll
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.pdb
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\Backed_Developer_Algorithm_Project.genruntimeconfig.cache
+C:\Users\SILA\Desktop\Case\Algoritma Projesi\Backed_Developer_Algorithm_Project\obj\Debug\net6.0\ref\Backed_Developer_Algorithm_Project.dll

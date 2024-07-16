@@ -10,12 +10,16 @@ namespace Backed_Developer_Algorithm_Project
         static void Main(string[] args)
         {
             IEventRepository eventRepository = new EventRepository();
-            ILocationDistanceRepository distanceRepository = new LocationDistanceRepository();
-            IEventService eventService = new EventService(eventRepository);
-            ILocationDistanceService locationDistanceService = new LocationDistanceService(distanceRepository);
+            ILocationDistanceRepository locationDistanceRepository = new LocationDistanceRepository();
 
-            eventService.ScheduleEvents();
+            IEventService eventService = new EventService(eventRepository, new LocationDistanceService(locationDistanceRepository));
 
+            var scheduledEvents = eventService.ScheduleEvents();
+            int totalPriority = eventService.CalculateTotalPriority(scheduledEvents);
+
+            Console.WriteLine("Katılınabilecek Etkinlik Sayısı: " + scheduledEvents.Count);
+            Console.WriteLine("Katılınabilecek Etkinliklerin ID'leri: " + string.Join(", ", scheduledEvents.Select(e => e.Id)));
+            Console.WriteLine("Toplam Değer: " + totalPriority);
 
             Console.ReadLine();
         }

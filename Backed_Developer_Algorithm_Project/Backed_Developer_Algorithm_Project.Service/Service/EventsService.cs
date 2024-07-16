@@ -1,4 +1,5 @@
 ﻿using Backed_Developer_Algorithm_Project.Backed_Developer_Algorithm_Project.Dal.IRepositories;
+using Backed_Developer_Algorithm_Project.Backed_Developer_Algorithm_Project.Entites;
 using Backed_Developer_Algorithm_Project.Backed_Developer_Algorithm_Project.Service.IService;
 using Backed_Developer_Algorithm_Project.Entites;
 
@@ -7,55 +8,64 @@ namespace Backed_Developer_Algorithm_Project.Backed_Developer_Algorithm_Project.
     public class EventService : IEventService
     {
         private readonly IEventRepository _eventRepository;
+        private readonly ILocationDistanceService _locationDistanceService;
 
-        public EventService(IEventRepository eventRepository)
+        public EventService(IEventRepository eventRepository, ILocationDistanceService locationDistanceService)
         {
-            _eventRepository = eventRepository;
+            _eventRepository = eventRepository ?? throw new ArgumentNullException(nameof(eventRepository));
+            _locationDistanceService = locationDistanceService ?? throw new ArgumentNullException(nameof(locationDistanceService));
         }
 
-        public void ScheduleEvents()
+        public List<Event> GetAllEvents()
         {
-            var events = _eventRepository.GetAllEvents();
+            return _eventRepository.GetAllEvents();
+        }
 
-            // Zaman sırasına göre etkinlikleri sırala
-            events.Sort((e1, e2) => e1.Priority.CompareTo(e2.Priority));
+        public List<Event> GetFilteredEvents()
+        {
+            var now = DateTime.Now.TimeOfDay;
+            return _eventRepository.GetAllEvents()
+                .Where(e => e.StartTime > now)
+                .OrderByDescending(e => e.Priority)
+                .ThenBy(e => e.StartTime)
+                .ToList();
+        }
 
-            List<int> scheduledEventIds = new List<int>();
-            int totalValue = 0;
+        public List<Event> ScheduleEvents()
+        {
+            var events = GetFilteredEvents();
+            var locationDistances = _locationDistanceService.GetAllLocationDistances();
 
-            foreach (var ev in events)
+            List<Event> scheduledEvents = new List<Event>();
+            TimeSpan currentEndTime = TimeSpan.Zero;
+
+            foreach (var currentEvent in events)
             {
-                if (!IsEventOverlap(ev, events))
+                if (scheduledEvents.Count == 0 || CanScheduleEvent(currentEvent, scheduledEvents.Last(), locationDistances, currentEndTime))
                 {
-                    scheduledEventIds.Add(ev.Id);
-                    totalValue += ev.Priority;
-
-                    // İstenilen maksimum etkinlik sayısına ulaşıldıysa döngüyü sonlandır
-                    if (scheduledEventIds.Count == 3)
-                        break;
+                    scheduledEvents.Add(currentEvent);
+                    currentEndTime = currentEvent.EndTime;
                 }
             }
 
-            // Sonuçları yazdır
-            Console.WriteLine("Katılınabilecek Maksimum Etkinlik Sayısı: " + scheduledEventIds.Count);
-            Console.WriteLine("Katılınabilecek Etkinliklerin ID'leri: " + string.Join(", ", scheduledEventIds));
-            Console.WriteLine("Toplam Değer: " + totalValue);
+            return scheduledEvents;
         }
 
-        private bool IsEventOverlap(Event newEvent, List<Event> allEvents)
+        private bool CanScheduleEvent(Event currentEvent, Event nextEvent, List<LocationDistance> locationDistances, TimeSpan currentEndTime)
         {
-            foreach (var ev in allEvents)
-            {
-                if (ev.Id != newEvent.Id && ev.Location == newEvent.Location)
-                {
-                    if (!((newEvent.EndTime <= ev.StartTime) || (newEvent.StartTime >= ev.EndTime)))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
+            var distance = locationDistances.FirstOrDefault(d =>
+                (d.From == currentEvent.Location && d.To == nextEvent.Location));
+
+            if (distance == null)
+                return true;
+
+            TimeSpan updateEndTime = currentEndTime + distance.DurationMinutes;
+            return updateEndTime <= nextEvent.StartTime;
+        }
+
+        public int CalculateTotalPriority(List<Event> events)
+        {
+            return events.Sum(e => e.Priority);
         }
     }
-
 }

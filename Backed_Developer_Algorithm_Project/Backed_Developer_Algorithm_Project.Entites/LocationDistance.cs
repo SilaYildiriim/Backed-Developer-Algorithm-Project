@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Backed_Developer_Algorithm_Project.Backed_Developer_Algorithm_Project.Entites
+﻿namespace Backed_Developer_Algorithm_Project.Backed_Developer_Algorithm_Project.Entites
 {
     public class LocationDistance
     {
         public string From { get; set; }
         public string To { get; set; }
-        public int DurationMinutes { get; set; }
+        public TimeSpan DurationMinutes { get; set; }
 
-        public LocationDistance(string from, string to, int durationMinutes)
+        public LocationDistance(string from, string to, TimeSpan durationMinutes)
         {
             From = from;
             To = to;

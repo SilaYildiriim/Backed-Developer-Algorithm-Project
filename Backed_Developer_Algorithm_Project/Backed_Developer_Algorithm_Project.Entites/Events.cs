@@ -7,8 +7,7 @@ namespace Backed_Developer_Algorithm_Project.Entites
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
         public int Priority { get; set; }
-
-        public string Location { get; private set; } // LocationId sadece Event sınıfı içinde değiştirilebilir.
+        public string Location { get; private set; }
 
         public Event(int id, TimeSpan startTime, TimeSpan endTime, string location, int priority) : base(id)
         {
